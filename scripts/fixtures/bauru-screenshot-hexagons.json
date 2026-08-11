@@ -1,0 +1,68 @@
+{
+  "municipality": {
+    "id": 68,
+    "name": "Bauru",
+    "code_ibge": "3506003"
+  },
+  "baseline": {
+    "levels": {
+      "INF_CRE": {
+        "pop": 15313,
+        "totalEnroll": 8715,
+        "privateEnroll": 3682,
+        "integralEnrollShare": 0.640390131956397,
+        "nocturnalShare": 0,
+        "existingClassrooms": 316,
+        "seatsPerClass": 15
+      },
+      "FUND_AI": {
+        "pop": 22898,
+        "totalEnroll": 23377,
+        "privateEnroll": 6847,
+        "integralEnrollShare": 0.11913419172691107,
+        "nocturnalShare": 0,
+        "existingClassrooms": 730,
+        "seatsPerClass": 35
+      }
+    }
+  },
+  "metadata": {
+    "state": "35",
+    "municipality": "3506003",
+    "resolution": 7,
+    "total_count": 148,
+    "fixture": "Canonical Bauru totals compressed to the two screenshot hexagons plus a remainder row"
+  },
+  "features": [
+    {
+      "h3_index": "87a81c351ffffff",
+      "education_data": {
+        "qt_mat_inf_cre": 175,
+        "qt_mat_fund_ai": 865,
+        "qt_salas_utilizadas": 50,
+        "qt_salas_weighted_inf_cre": 5.9848,
+        "qt_salas_weighted_fund_ai": 24.7581
+      }
+    },
+    {
+      "h3_index": "87a81cadbffffff",
+      "education_data": {
+        "qt_mat_inf_cre": 61,
+        "qt_mat_fund_ai": 302,
+        "qt_salas_utilizadas": 45,
+        "qt_salas_weighted_inf_cre": 2.4525,
+        "qt_salas_weighted_fund_ai": 12.1455
+      }
+    },
+    {
+      "h3_index": "remainder",
+      "education_data": {
+        "qt_mat_inf_cre": 8479,
+        "qt_mat_fund_ai": 22210,
+        "qt_salas_utilizadas": 0,
+        "qt_salas_weighted_inf_cre": 307.1993,
+        "qt_salas_weighted_fund_ai": 692.1882
+      }
+    }
+  ]
+}

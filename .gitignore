@@ -1,0 +1,38 @@
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment variables (CRITICAL - never commit these)
+.env
+.env.local
+.env.*.local
+*.env
+
+# Terraform sensitive files (managed in infra/.gitignore but adding here for safety)
+*.tfvars
+!*.tfvars.example
+*.tfstate
+*.tfstate.*
+tfplan
+tfplan*
+*.tfplan
+*.tfplan*
+.terraform/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/

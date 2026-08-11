@@ -1,0 +1,280 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+/* Tell Tailwind v4 where to scan for classnames */
+@source "./index.html";
+@source "./src/**/*.{js,ts,jsx,tsx}";
+
+/* shadcn/ui CSS variables (light & dark) */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 47.4% 11.2%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 47.4% 11.2%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 47.4% 11.2%;
+
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222.2 47.4% 11.2%;
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+}
+
+/* Base layer */
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "SF Pro Display", Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Responsive font scaling – no mobile support */
+html {
+  font-size: 80%; /* medium / low-res screens (< 1440px) */
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 100%; /* large / high-res screens */
+  }
+}
+
+html, body {
+  height: auto;
+  min-height: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+/* Keep page width stable when Radix Select applies body scroll-lock. */
+html body[data-scroll-locked] {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+html body.with-scroll-bars-hidden {
+  padding-right: 0 !important;
+}
+
+html body[data-scroll-locked] #root {
+  width: 100%;
+  max-width: 100%;
+}
+
+html body[data-scroll-locked] {
+  overflow-x: clip;
+}
+
+/* Compact map attribution to reduce interference with bottom widgets while keeping it visible. */
+.maplibregl-ctrl-bottom-right .maplibregl-ctrl.maplibregl-ctrl-attrib {
+  margin: 0 0.5rem 0.5rem 0;
+  border-radius: 9999px;
+  font-size: 10px;
+  line-height: 1.2;
+  padding: 0.2rem 1.45rem 0.2rem 0.5rem;
+  background: hsl(var(--card) / 0.92);
+  color: hsl(var(--card-foreground));
+  border: 1px solid hsl(var(--border));
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.15);
+  backdrop-filter: blur(4px);
+}
+
+.maplibregl-ctrl-attrib.maplibregl-compact .maplibregl-ctrl-attrib-inner {
+  white-space: nowrap;
+}
+
+.maplibregl-ctrl-attrib.maplibregl-compact .maplibregl-ctrl-attrib-button {
+  right: 0.35rem;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  transform: translateY(-50%);
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Utilities commonly used across the app */
+.container-2xl {
+  max-width: 1400px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hide scrollbars while preserving scroll behavior */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Print styles for report */
+@media print {
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background: white !important;
+  }
+  
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  /* Hide non-essential elements when printing */
+  nav, header, footer, .no-print {
+    display: none !important;
+  }
+  
+  /* Page breaks */
+  .page-break {
+    page-break-before: always;
+  }
+  
+  .page-break-before {
+    page-break-before: always;
+  }
+  
+  .page-break-inside-avoid {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Avoid breaking inside cards */
+  .card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  /* Report-specific print styles */
+  .print\:p-4 {
+    padding: 1rem !important;
+  }
+  
+  .print\:mb-4 {
+    margin-bottom: 1rem !important;
+  }
+  
+  .print\:mt-4 {
+    margin-top: 1rem !important;
+  }
+  
+  .print\:shadow-none {
+    box-shadow: none !important;
+  }
+  
+  .print\:border {
+    border: 1px solid #e5e7eb !important;
+  }
+  
+  .print\:max-w-none {
+    max-width: none !important;
+  }
+  
+  /* Ensure tables print nicely */
+  table {
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #e5e7eb;
+  }
+  
+  /* Images should not break across pages */
+  img {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  /* Links should show URL */
+  a[href]:after {
+    content: none !important;
+  }
+}
+
+/* ── Report modal print styles ──────────────────────────────── */
+@media print {
+  @page {
+    margin: 1cm;
+  }
+
+  /* Hide everything when printing the report */
+  body.printing-report > *:not(#report-print-container) {
+    display: none !important;
+  }
+
+  /* Show the cloned print container full-width */
+  body.printing-report > #report-print-container {
+    display: block !important;
+    width: 100% !important;
+    position: static !important;
+  }
+
+  /* Ensure card borders are solid in print */
+  body.printing-report > #report-print-container [class*="card"],
+  body.printing-report > #report-print-container [class*="Card"] {
+    border: 1px solid !important;
+    border-radius: 0.5rem !important;
+    box-shadow: none !important;
+  }
+}

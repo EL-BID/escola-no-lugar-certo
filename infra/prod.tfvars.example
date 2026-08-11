@@ -1,0 +1,25 @@
+azure_subscription_id = "<YOUR_AZURE_SUBSCRIPTION_ID>"
+environment           = "prod"
+location              = "brazilsouth"
+backend_image_tag     = "prod-<release-tag>"
+backend_allowed_hosts = "api.example.com,localhost,127.0.0.1"
+db_admin_user         = "pgadmin"
+db_admin_password     = "CHANGE_ME_STRONG_AND_SECURE"
+db_name               = "geo_prod"
+db_sku_name           = "GP_Standard_D2s_v3"
+db_storage_mb         = 131072
+db_firewall_start_ip  = "<YOUR_OFFICE_IP_START>"
+db_firewall_end_ip    = "<YOUR_OFFICE_IP_END>"
+frontend_cors_origin  = "https://frontend.example.com"
+django_settings_module = "geo_edu_brazil.settings"
+django_debug_override = null
+storage_custom_domain = "frontend.example.com"
+storage_custom_domain_use_subdomain = false
+enable_redis          = true
+redis_sku_name        = "Basic"
+redis_family          = "C"
+redis_capacity        = 1
+tags = {
+  env   = "prod"
+  owner = "data-platform"
+}

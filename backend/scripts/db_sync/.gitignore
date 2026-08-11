@@ -1,0 +1,9 @@
+# Environment files with credentials
+.env
+.env.local
+.env.*.local
+
+# Temporary files created during sync
+*.csv
+*.sql
+*.log

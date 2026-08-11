@@ -1,0 +1,9 @@
+# Terraform state and local files
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+*.tfvars
+!*.tfvars.example
+tfplan
+*.tfplan

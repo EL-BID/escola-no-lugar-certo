@@ -1,0 +1,49 @@
+# Core Django and GeoDjango - Production Tested Versions
+Django==5.2.7
+psycopg2-binary==2.9.10
+dj-database-url==2.1.0
+
+# Spatial Data Processing - Verified Compatible Versions
+geopandas==1.0.1
+pandas==2.2.3
+pyarrow==18.1.0
+
+# H3 Hexagonal Spatial Indexing - Latest Version
+h3==4.0.0b5
+
+# API Framework - Latest Stable
+djangorestframework==3.16.1
+
+# Production Web Server
+gunicorn==23.0.0
+whitenoise==6.11.0
+
+# Optional Development Dependencies
+# Uncomment as needed:
+
+# Development and testing
+python-decouple>=3.8
+django-extensions>=3.2.0
+django-debug-toolbar>=4.2.0
+pytest>=7.4.0
+pytest-django>=4.5.0
+
+# Additional spatial libraries (install if needed)
+geojson>=3.0.0
+shapely>=2.0.0
+folium>=0.15.0
+
+# API extensions (install if needed)
+djangorestframework-gis>=1.0
+django-cors-headers>=4.3.0
+django-redis>=5.4.0
+redis>=5.0.0
+
+# Brazilian data processing (install if needed)
+requests>=2.31.0
+openpyxl>=3.1.0
+
+# Development tools (install if needed)
+black>=23.9.0
+flake8>=6.1.0
+isort>=5.12.0
