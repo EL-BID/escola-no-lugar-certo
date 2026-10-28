@@ -12,7 +12,7 @@ pyarrow==18.1.0
 h3==4.0.0b5
 
 # API Framework - Latest Stable
-djangorestframework==3.16.1
+djangorestframework==3.18.2
 
 # Production Web Server
 gunicorn==23.0.0
